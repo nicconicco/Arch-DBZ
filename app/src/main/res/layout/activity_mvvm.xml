@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvc.MVCActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/firstImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        android:background="@color/secondary_text"
+        android:gravity="center"
+        android:scaleType="fitXY"
+        android:transitionName="textviewAnimation"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Teste" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mvvm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|left"
+        android:paddingStart="30dp"
+        android:paddingTop="30dp"
+        android:text="MVVM"
+        android:textColor="@color/primary_text"
+        android:textSize="36sp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/firstImage"
+        tools:ignore="RtlSymmetry" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgMvp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:adjustViewBounds="true"
+        android:gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/mvp"
+        android:transitionName="textviewAnimation"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/mvvm"
+        tools:text="Teste" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/btnMoreInfos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/primary_text"
+        android:textSize="18sp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center|top|left"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgMvp"
+        tools:text="Para mais informacoes acesse:" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="@id/btnMoreInfos"
+        app:layout_constraintTop_toTopOf="@id/mvvm" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

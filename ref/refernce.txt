@@ -1,0 +1,16 @@
+// Here are all my references to this project
+
+// List
+https://material.io/develop/android/components/lists/
+
+// MVC arch
+https://github.com/greenrobot/EventBus
+
+// MVP arch
+https://github.com/kozmi55/Kotlin-MVP-Testing
+
+// MVVM arch
+
+
+
+
