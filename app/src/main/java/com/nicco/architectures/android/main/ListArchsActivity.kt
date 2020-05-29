@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import com.nicco.architectures.android.R
 import com.nicco.architectures.android.mvc.MVCActivity
 import com.nicco.architectures.android.mvp.MVPActivity
+import com.nicco.architectures.android.mvvm.MVVMActivity
 import kotlinx.android.synthetic.main.activity_list_archs.*
 
 const val EXTRA_TRANSITION = "EXTRA_TRANSITION"
@@ -29,6 +30,9 @@ class ListArchsActivity : AppCompatActivity() {
                     }
                     "MVP" -> {
                         intent = Intent(this@ListArchsActivity, MVPActivity::class.java)
+                    }
+                    "MVVM" -> {
+                        intent = Intent(this@ListArchsActivity, MVVMActivity::class.java)
                     }
                     else -> {
 

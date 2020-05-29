@@ -10,7 +10,7 @@ class PresenterImp(
 ) : BasePresenter<Presenter.View>(), Presenter.UserAction {
 
     override fun loadMvpInfos() {
-        networkFake.createItem()
+        networkFake.creaMVPInfos()
             .subscribeOn(scheduler.io())
             .observeOn(scheduler.ui())
             .subscribe(

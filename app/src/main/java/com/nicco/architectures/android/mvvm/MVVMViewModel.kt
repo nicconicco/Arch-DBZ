@@ -2,14 +2,42 @@ package com.nicco.architectures.android.mvvm
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.nicco.architectures.android.base.BaseViewModel
-import com.nicco.architectures.android.network.NetworkFake
+import androidx.lifecycle.ViewModel
+import com.nicco.architectures.android.network.CoroutineNetworkFake
 
-class MVVMViewModel : BaseViewModel() {
+sealed class State<out T> {
+    data class Success<out T>(val result: T) : State<T>()
+    data class Error<out T>(val msg: String) : State<T>()
+    data class Loading<out T>(val loading: Boolean) : State<T>()
+}
 
-    private val _actionView = MutableLiveData<MVVMModel>()
-    val actionView: LiveData<MVVMModel>
+class MVVMViewModel(val coroutineNetworkFake: CoroutineNetworkFake) : ViewModel() {
+
+    private val _actionView = MutableLiveData<State<MVVMModel>>()
+    val actionView: LiveData<State<MVVMModel>>
         get() = _actionView
 
-    lateinit var networkFake: NetworkFake
+    init {
+    }
+
+    fun getInfos() {
+        coroutineNetworkFake.execute {
+            _actionView.postValue(State.Loading(true))
+
+            onComplete {
+                _actionView.postValue(State.Loading(false))
+                _actionView.postValue(State.Success(it))
+            }
+            onCancel {
+                _actionView.postValue(State.Loading(false))
+                _actionView.postValue(State.Error(it.localizedMessage))
+            }
+            onError { it ->
+                _actionView.postValue(State.Loading(false))
+                it.message?.let {
+                    _actionView.postValue(State.Error(it))
+                }
+            }
+        }
+    }
 }

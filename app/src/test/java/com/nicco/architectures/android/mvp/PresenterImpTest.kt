@@ -41,11 +41,11 @@ class LoginPresenterTest {
         }
 
         // When
-        whenever(network.createItem()).thenReturn(single)
+        whenever(network.creaMVPInfos()).thenReturn(single)
 
         presenter.attach(mView)
         presenter.loadMvpInfos()
-        verify(network).createItem()
+        verify(network).creaMVPInfos()
 
         testScheduler.triggerActions()
 
@@ -64,7 +64,7 @@ class LoginPresenterTest {
         }
 
         // When
-        whenever(network.createItem()).thenReturn(single)
+        whenever(network.creaMVPInfos()).thenReturn(single)
 
         presenter.attach(mView)
         presenter.loadMvpInfos()
