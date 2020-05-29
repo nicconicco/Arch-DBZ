@@ -197,4 +197,334 @@ class MVVMViewModelV4Test {
             }
         }
     }
+
+    @Test
+    fun `Test example7`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
+
+    @Test
+    fun `Test example8`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
+
+    @Test
+    fun `Test example9`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
+
+    @Test
+    fun `Test example10`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
+
+    @Test
+    fun `Test example11`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
+    @Test
+    fun `Test example12`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
+    @Test
+    fun `Test example13`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
+    @Test
+    fun `Test example14`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
+    @Test
+    fun `Test example15`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
+    @Test
+    fun `Test example16`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
+    @Test
+    fun `Test example17`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
+    @Test
+    fun `Test example18`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
+    @Test
+    fun `Test example19`() {
+        GlobalScope.launch {
+            withContext(Dispatchers.Unconfined) {
+                val expectedStateSuccess = ViewState.showInfosMVVm::class.java
+                val response = MVVMModel(url = "fake")
+                val result: Either<String, MVVMModel>? = Either.Right(response)
+
+                `when`(networkUseCaseImp.execute()).thenReturn(result)
+
+                // When
+                mvvmViewModelV4.findInfosMVVM()
+
+                // Then
+                assert(mvvmViewModelV4.viewState.value != null)
+                verify(observer).onChanged(ViewState.loading(true))
+                verify(observer).onChanged(ViewState.showInfosMVVm(response))
+                verify(observer).onChanged(ViewState.loading(false))
+                assertThat(mvvmViewModelV4.viewState.value, IsInstanceOf(expectedStateSuccess))
+                assert(mvvmViewModelV4.viewState.value == ViewState.showInfosMVVm(response))
+
+                mvvmViewModelV4.viewState.removeObserver(observer)
+            }
+        }
+    }
 }
