@@ -1,5 +1,7 @@
 package com.nicco.architectures.android.mvp
 
 class MVPModel(
-    val url: String
-)
+    var url: String
+) {
+    fun hasCache() = url.isNotBlank() || url.isNotEmpty()
+}

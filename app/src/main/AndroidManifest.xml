@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mvvm.MVVMActivity"></activity>
+        <activity android:name=".mvpclean.ui.MVPCleanActivity"></activity>
+        <activity android:name=".mvvm.MVVMActivity" />
         <activity android:name=".mvp.MVPActivity" />
         <activity android:name=".mvc.MVCActivity" />
         <activity android:name=".main.ListArchsActivity">

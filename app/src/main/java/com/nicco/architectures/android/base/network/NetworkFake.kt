@@ -1,4 +1,4 @@
-package com.nicco.architectures.android.network
+package com.nicco.architectures.android.base.network
 
 import com.nicco.architectures.android.mvc.MVCModel
 import com.nicco.architectures.android.mvp.MVPModel
@@ -24,4 +24,6 @@ open class NetworkFake {
     fun createMVVMInfos(): MVVMModel {
         return MVVMModel(url = "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel")
     }
+
+    fun createMVPClean() : MVPModel = MVPModel(url = "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html")
 }

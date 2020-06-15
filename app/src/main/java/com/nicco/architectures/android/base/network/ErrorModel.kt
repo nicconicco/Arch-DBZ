@@ -1,4 +1,4 @@
-package com.nicco.architectures.android.network
+package com.nicco.architectures.android.base.network
 
 data class ErrorModel(
         val message: String?,

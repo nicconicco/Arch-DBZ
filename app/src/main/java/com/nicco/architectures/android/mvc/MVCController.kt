@@ -1,7 +1,7 @@
 package com.nicco.architectures.android.mvc
 
 import com.nicco.architectures.android.base.BaseCorotuineScope
-import com.nicco.architectures.android.network.NetworkFake
+import com.nicco.architectures.android.base.network.NetworkFake
 
 class MVCController : BaseCorotuineScope() {
 

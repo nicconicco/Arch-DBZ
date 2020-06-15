@@ -1,4 +1,4 @@
-package com.nicco.architectures.android.network
+package com.nicco.architectures.android.base.network
 
 /**
  * various error status to know what happened if something goes wrong with a repository call

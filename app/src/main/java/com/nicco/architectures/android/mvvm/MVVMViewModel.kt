@@ -1,43 +1,39 @@
 package com.nicco.architectures.android.mvvm
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.nicco.architectures.android.network.CoroutineNetworkFake
+import com.nicco.architectures.android.base.SingleLiveEvent
+import kotlinx.coroutines.*
 
-sealed class State<out T> {
-    data class Success<out T>(val result: T) : State<T>()
-    data class Error<out T>(val msg: String) : State<T>()
-    data class Loading<out T>(val loading: Boolean) : State<T>()
+sealed class ViewState {
+    data class loading(val load: Boolean) : ViewState()
+    data class showInfosMVVm(val mvvm: MVVMModel) : ViewState()
+    data class erro(val erroType: String) : ViewState()
 }
 
-class MVVMViewModel(val coroutineNetworkFake: CoroutineNetworkFake) : ViewModel() {
+class MVVMViewModel(val networkProvider: NetworkProvider) : BaseViewModel() {
+    private val _viewState by lazy { SingleLiveEvent<ViewState>() }
+    val viewState: LiveData<ViewState> get() = _viewState
 
-    private val _actionView = MutableLiveData<State<MVVMModel>>()
-    val actionView: LiveData<State<MVVMModel>>
-        get() = _actionView
+    fun findInfosMVVM() {
+        _viewState.value = ViewState.loading(true)
 
-    init {
+        uiScope.launch {
+            getInfosNetwork()
+        }
     }
 
-    fun getInfos() {
-        coroutineNetworkFake.execute {
-            _actionView.postValue(State.Loading(true))
-
-            onComplete {
-                _actionView.postValue(State.Loading(false))
-                _actionView.postValue(State.Success(it))
-            }
-            onCancel {
-                _actionView.postValue(State.Loading(false))
-                _actionView.postValue(State.Error(it.localizedMessage))
-            }
-            onError { it ->
-                _actionView.postValue(State.Loading(false))
-                it.message?.let {
-                    _actionView.postValue(State.Error(it))
-                }
-            }
+    private suspend fun getInfosNetwork() {
+        fun showError(erro: String) {
+            _viewState.value = ViewState.erro(erro)
         }
+
+        fun showInfos(mvvmModel: MVVMModel) {
+            _viewState.value = ViewState.loading(false)
+            _viewState.value = ViewState.showInfosMVVm(mvvmModel)
+        }
+
+        ioScope.async {
+            return@async networkProvider.findInfos()
+        }.await().fold(::showError, ::showInfos)
     }
 }
