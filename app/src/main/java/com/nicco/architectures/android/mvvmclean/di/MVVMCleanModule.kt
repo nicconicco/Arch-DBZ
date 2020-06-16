@@ -1,18 +1,18 @@
-package com.nicco.architectures.android.mvpclean.di
+package com.nicco.architectures.android.mvvmclean.di
 
 import com.nicco.architectures.android.base.database.DatabaseFake
 import com.nicco.architectures.android.base.network.NetworkFake
-import com.nicco.architectures.android.mvpclean.data.datasource.MVPCleanDatasource
-import com.nicco.architectures.android.mvpclean.data.datasource.MVPCleanLocalDatasource
-import com.nicco.architectures.android.mvpclean.data.datasource.MVPCleanRemoteDatasource
-import com.nicco.architectures.android.mvpclean.data.repository.MVPCleanRepository
-import com.nicco.architectures.android.mvpclean.data.repository.MVPCleanRepositoryImp
+import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanDatasource
+import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanLocalDatasource
+import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanRemoteDatasource
 import com.nicco.architectures.android.mvvmclean.data.repository.MVVMCleanRepository
 import com.nicco.architectures.android.mvvmclean.data.repository.MVVMCleanRepositoryImp
 import com.nicco.architectures.android.mvpclean.presentation.MVPCleanPresentation
 import com.nicco.architectures.android.mvpclean.presentation.MVPCleanPresentationImp
 import com.nicco.architectures.android.mvpclean.usecase.MVPCleanUseCase
 import com.nicco.architectures.android.mvpclean.usecase.MVPCleanUseCaseImp
+import com.nicco.architectures.android.mvvmclean.usecase.MVVMCleanUseCase
+import com.nicco.architectures.android.mvvmclean.usecase.MVVMCleanUseCaseImp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,7 +21,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(ApplicationComponent::class)
-class MVPCleanModule {
+class MVVMCleanModule {
 
     @Provides
     @Singleton
@@ -35,21 +35,17 @@ class MVPCleanModule {
 
     @Provides
     @Singleton
-    fun remoteDatasource(): MVPCleanDatasource = MVPCleanRemoteDatasource(provideNetworkFake())
+    fun remoteDatasource(): MVVMCleanDatasource = MVVMCleanRemoteDatasource(provideNetworkFake())
 
     @Provides
     @Singleton
-    fun localDatasource(): MVPCleanDatasource = MVPCleanLocalDatasource(provideDatabaseFake())
+    fun localDatasource(): MVVMCleanDatasource = MVVMCleanLocalDatasource(provideDatabaseFake())
 
     @Provides
     @Singleton
-    fun repository(): MVPCleanRepository = MVPCleanRepositoryImp(localDatasource(), remoteDatasource())
+    fun repository(): MVVMCleanRepository = MVVMCleanRepositoryImp(localDatasource(), remoteDatasource())
 
     @Provides
     @Singleton
-    fun useCase(): MVPCleanUseCase = MVPCleanUseCaseImp(repository())
-
-    @Provides
-    @Singleton
-    fun provideMVPCleanComponent(): MVPCleanPresentation.Action = MVPCleanPresentationImp(useCase())
+    fun useCase(): MVVMCleanUseCase = MVVMCleanUseCaseImp(repository())
 }
