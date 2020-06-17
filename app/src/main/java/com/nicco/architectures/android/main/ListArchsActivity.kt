@@ -8,6 +8,7 @@ import androidx.core.app.ActivityOptionsCompat
 import androidx.core.view.ViewCompat
 import com.nicco.architectures.android.R
 import com.nicco.architectures.android.mvc.MVCActivity
+import com.nicco.architectures.android.mvi.ui.view.MVIActivity
 import com.nicco.architectures.android.mvp.MVPActivity
 import com.nicco.architectures.android.mvpclean.ui.MVPCleanActivity
 import com.nicco.architectures.android.mvvm.MVVMActivity
@@ -41,6 +42,9 @@ class ListArchsActivity : AppCompatActivity() {
                     }
                     "MVVM Clean" -> {
                         intent = Intent(this@ListArchsActivity, MVVMCleanActivity::class.java)
+                    }
+                    "MVI" -> {
+                        intent = Intent(this@ListArchsActivity, MVIActivity::class.java)
                     }
                     else -> {
 

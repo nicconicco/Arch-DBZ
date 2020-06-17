@@ -8,14 +8,12 @@ import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanDataso
 import com.nicco.architectures.android.mvvmclean.data.repository.MVVMCleanRepository
 import javax.inject.Inject
 
-class MVPCleanRepositoryImp @Inject constructor(
+class MVPCleanRepositoryImp(
     private val mvpCleanLocalDatasource: MVPCleanDatasource,
     private val mvpCleanRemoteDatasource: MVPCleanDatasource
 ) : MVPCleanRepository {
     override fun findInfos(): Either<String, MVPModel> {
-        Log.d("MVPCleanRepositoryImp", "findInfos()")
         val cache = mvpCleanLocalDatasource.getData()
-
         Log.d("cache", "${cache.hasCache()}")
 
         return if (cache.hasCache()) {

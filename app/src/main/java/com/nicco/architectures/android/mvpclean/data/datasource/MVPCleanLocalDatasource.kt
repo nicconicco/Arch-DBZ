@@ -5,7 +5,7 @@ import com.nicco.architectures.android.mvp.MVPModel
 import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanDatasource
 import javax.inject.Inject
 
-class MVPCleanLocalDatasource @Inject constructor(
+class MVPCleanLocalDatasource (
     val databaseFake: DatabaseFake
 ) :
     MVPCleanDatasource {

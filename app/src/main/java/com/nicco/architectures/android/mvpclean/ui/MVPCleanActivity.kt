@@ -8,16 +8,15 @@ import android.view.View
 import com.nicco.architectures.android.R
 import com.nicco.architectures.android.base.BaseActivity
 import com.nicco.architectures.android.mvp.MVPModel
-import com.nicco.architectures.android.mvpclean.presentation.MVPCleanPresentation
+import com.nicco.architectures.android.mvpclean.presentation.MVPCleanPresenter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_mvp_clean.*
-import javax.inject.Inject
+import org.koin.android.ext.android.inject
 
 @AndroidEntryPoint
-class MVPCleanActivity : BaseActivity(), MVPCleanPresentation.View {
+class MVPCleanActivity : BaseActivity(), MVPCleanPresenter.View {
 
-    @Inject
-    lateinit var mVPCleanPresentationImp: MVPCleanPresentation.Action
+    private val mVPCleanPresentationImp: MVPCleanPresenter.Action by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

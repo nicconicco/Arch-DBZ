@@ -7,10 +7,6 @@ import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanLocalD
 import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanRemoteDatasource
 import com.nicco.architectures.android.mvvmclean.data.repository.MVVMCleanRepository
 import com.nicco.architectures.android.mvvmclean.data.repository.MVVMCleanRepositoryImp
-import com.nicco.architectures.android.mvpclean.presentation.MVPCleanPresentation
-import com.nicco.architectures.android.mvpclean.presentation.MVPCleanPresentationImp
-import com.nicco.architectures.android.mvpclean.usecase.MVPCleanUseCase
-import com.nicco.architectures.android.mvpclean.usecase.MVPCleanUseCaseImp
 import com.nicco.architectures.android.mvvmclean.usecase.MVVMCleanUseCase
 import com.nicco.architectures.android.mvvmclean.usecase.MVVMCleanUseCaseImp
 import dagger.Module

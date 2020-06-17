@@ -5,11 +5,11 @@ import com.nicco.architectures.android.mvp.MVPModel
 import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanDatasource
 import javax.inject.Inject
 
-class MVPCleanRemoteDatasource @Inject constructor(
+class MVPCleanRemoteDatasource(
     private val networkFake: NetworkFake
-):
+) :
     MVPCleanDatasource {
-    override fun getData() : MVPModel {
+    override fun getData(): MVPModel {
         return networkFake.createMVPClean()
     }
 }
