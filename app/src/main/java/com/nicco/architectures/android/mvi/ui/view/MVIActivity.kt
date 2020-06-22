@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.collect
 import com.nicco.architectures.android.mvi.data.datasource.MVILocaldatasource
 import com.nicco.architectures.android.mvi.data.datasource.MVIRemoteDatasource
 import com.nicco.architectures.android.mvi.factory.ViewModelFactory
+import com.nicco.architectures.android.mvi.ui.intent.MVIIntent
 import com.nicco.architectures.android.mvi.ui.viewmodel.MVIViewModel
 import com.nicco.architectures.android.mvi.ui.viewstate.MVIMainState
 import kotlinx.android.synthetic.main.activity_mvi.*
@@ -28,6 +29,12 @@ class MVIActivity : AppCompatActivity() {
 
         setupMVIViewModel()
         setupObservers()
+
+        mvi.setOnClickListener {
+            lifecycleScope.launch {
+                mviViewModel.userIntent.send(MVIIntent.LoadMVIModel)
+            }
+        }
     }
 
     private fun setupObservers() {
