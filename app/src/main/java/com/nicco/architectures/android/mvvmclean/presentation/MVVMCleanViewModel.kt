@@ -1,29 +1,34 @@
 package com.nicco.architectures.android.mvvmclean.presentation
 
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.LiveData
-import com.nicco.architectures.android.base.SingleLiveEvent
-import com.nicco.architectures.android.mvpclean.usecase.MVPCleanUseCase
 import com.nicco.architectures.android.mvvm.BaseViewModel
 import com.nicco.architectures.android.mvvm.MVVMModel
 import com.nicco.architectures.android.mvvmclean.usecase.MVVMCleanUseCase
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.async
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+inline val <T> T.exaustive get() = this
+
 sealed class ViewState {
-    data class loading(val load: Boolean) : ViewState()
-    data class showInfosMVVm(val mvvm: MVVMModel) : ViewState()
-    data class erro(val erroType: String) : ViewState()
+    object Idle : ViewState()
+    data class Loading(val load: Boolean) : ViewState()
+    data class SuccessInfosMVVM(val mvvm: MVVMModel) : ViewState()
+    data class Error(val erroType: String) : ViewState()
 }
 
+@ExperimentalCoroutinesApi
 class MVVMViewModel @ViewModelInject constructor(
     private val mvvmCleanUseCase: MVVMCleanUseCase
 ) : BaseViewModel() {
-    private val _viewState by lazy { SingleLiveEvent<ViewState>() }
-    val viewState: LiveData<ViewState> get() = _viewState
+
+    private val _state by lazy { MutableStateFlow<ViewState>(ViewState.Idle) }
+    val state: StateFlow<ViewState> get() = _state
 
     fun findInfosMVVM() {
-        _viewState.value = ViewState.loading(true)
+        _state.value = ViewState.Loading(true)
 
         uiScope.launch {
             getInfos()
@@ -32,16 +37,21 @@ class MVVMViewModel @ViewModelInject constructor(
 
     private suspend fun getInfos() {
         fun showError(erro: String) {
-            _viewState.value = ViewState.erro(erro)
+            _state.value = ViewState.Error(erro)
         }
 
-        fun showInfos(mvvmModel: MVVMModel) {
-            _viewState.value = ViewState.loading(false)
-            _viewState.value = ViewState.showInfosMVVm(mvvmModel)
+        fun sucessInfos(mvvmModel: MVVMModel) {
+            _state.value = ViewState.Loading(false)
+
+            _state.value = try {
+                ViewState.SuccessInfosMVVM(mvvmModel)
+            } catch (e: Exception) {
+                ViewState.Error(e.message ?: "Exception")
+            }
         }
 
         ioScope.async {
             return@async mvvmCleanUseCase.findInfos()
-        }.await().fold(::showError, ::showInfos)
+        }.await().fold(::showError, ::sucessInfos)
     }
 }
