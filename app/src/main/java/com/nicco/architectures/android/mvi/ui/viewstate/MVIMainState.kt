@@ -1,5 +1,7 @@
 package com.nicco.architectures.android.mvi.ui.viewstate
 
+import com.nicco.architectures.android.mvi.data.MVIModel
+
 sealed class MVIMainState {
     object Idle : MVIMainState()
     data class Loading(val load: Boolean) : MVIMainState()

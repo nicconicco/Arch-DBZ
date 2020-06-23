@@ -1,7 +1,7 @@
 package com.nicco.architectures.android.mvi.data.repository
 
 import com.nicco.architectures.android.mvi.data.datasource.MVIDatasource
-import com.nicco.architectures.android.mvi.ui.viewstate.MVIModel
+import com.nicco.architectures.android.mvi.data.MVIModel
 
 class MVIRepositoryImp(
     private val localDatasource: MVIDatasource,

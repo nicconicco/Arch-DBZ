@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.SupervisorJob
 import kotlin.coroutines.CoroutineContext
 
-open class BaseCorotuineScope : CoroutineScope, AndroidViewModel(MyApp()) {
+open class BaseCoroutineScope : CoroutineScope, AndroidViewModel(MyApp()) {
 
     val job = SupervisorJob()
     val uiScope = CoroutineScope(Main + job)

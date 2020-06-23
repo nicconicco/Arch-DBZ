@@ -45,7 +45,6 @@ class MVIViewModel(
             } catch (e: Exception) {
                 MVIMainState.Error(e.localizedMessage)
             }
-            _state.value = MVIMainState.Loading(false)
         }
     }
 }

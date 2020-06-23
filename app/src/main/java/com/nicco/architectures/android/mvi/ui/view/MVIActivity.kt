@@ -1,13 +1,12 @@
 package com.nicco.architectures.android.mvi.ui.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.lifecycleScope
 import com.nicco.architectures.android.R
-import kotlinx.coroutines.flow.collect
+import com.nicco.architectures.android.base.BaseActivity
 import com.nicco.architectures.android.mvi.data.datasource.MVILocaldatasource
 import com.nicco.architectures.android.mvi.data.datasource.MVIRemoteDatasource
 import com.nicco.architectures.android.mvi.factory.ViewModelFactory
@@ -16,10 +15,11 @@ import com.nicco.architectures.android.mvi.ui.viewmodel.MVIViewModel
 import com.nicco.architectures.android.mvi.ui.viewstate.MVIMainState
 import kotlinx.android.synthetic.main.activity_mvi.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @ExperimentalCoroutinesApi
-class MVIActivity : AppCompatActivity() {
+class MVIActivity : BaseActivity() {
 
     private lateinit var mviViewModel: MVIViewModel
 
@@ -27,13 +27,12 @@ class MVIActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mvi)
 
+        setExtras(this)
         setupMVIViewModel()
         setupObservers()
 
-        mvi.setOnClickListener {
-            lifecycleScope.launch {
-                mviViewModel.userIntent.send(MVIIntent.LoadMVIModel)
-            }
+        lifecycleScope.launch {
+            mviViewModel.userIntent.send(MVIIntent.LoadMVIModel)
         }
     }
 

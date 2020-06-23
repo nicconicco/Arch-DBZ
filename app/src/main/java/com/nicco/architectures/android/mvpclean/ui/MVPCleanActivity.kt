@@ -13,7 +13,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_mvp_clean.*
 import org.koin.android.ext.android.inject
 
-@AndroidEntryPoint
 class MVPCleanActivity : BaseActivity(), MVPCleanPresenter.View {
 
     private val mVPCleanPresentationImp: MVPCleanPresenter.Action by inject()
