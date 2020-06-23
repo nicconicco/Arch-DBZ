@@ -39,10 +39,9 @@ class MVIViewModel(
 
     private fun loadMVIModel() {
         viewModelScope.launch {
-            _state.value = MVIMainState.Loading(true)
-            _state.value = try {
-                MVIMainState.LoadedMVI(repository.loadMVIModel())
-            } catch (e: Exception) {
+            _state.value = MVIMainState.Loading
+            _state.value = try { MVIMainState.LoadedMVI(repository.loadMVIModel()) }
+            catch (e: Exception) {
                 MVIMainState.Error(e.localizedMessage)
             }
         }

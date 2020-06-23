@@ -2,6 +2,8 @@ package com.nicco.architectures.android.mvi.ui.view
 
 import android.os.Bundle
 import android.view.View
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.lifecycleScope
@@ -44,15 +46,15 @@ class MVIActivity : BaseActivity() {
 
                     }
                     is MVIMainState.Loading -> {
-                        if (it.load) progress.visibility = View.VISIBLE else progress.visibility =
-                            View.GONE
+                        progress.visibility = VISIBLE
                     }
 
                     is MVIMainState.LoadedMVI -> {
-                        mvi.visibility = View.VISIBLE
-                        imgMVI.visibility = View.VISIBLE
-                        btnMoreInfos.visibility = View.VISIBLE
-                        btnMoreInfos.text = "Para mais informacoes entre em:\n\n${it}"
+                        progress.visibility = INVISIBLE
+                        mvi.visibility = VISIBLE
+                        imgMVI.visibility = VISIBLE
+                        btnMoreInfos.visibility = VISIBLE
+                        btnMoreInfos.text = "Para mais informacoes entre em:\n\n${it.mviModel.url}"
                     }
                     is MVIMainState.Error -> {
                         Toast.makeText(this@MVIActivity, it.error, Toast.LENGTH_LONG).show()
