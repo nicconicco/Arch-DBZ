@@ -16,7 +16,6 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MVVMCleanActivity : BaseActivity() {
-
     private val mvvmViewModel: MVVMViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,10 +38,8 @@ class MVVMCleanActivity : BaseActivity() {
                         if (it.load) progress.visibility = View.VISIBLE else progress.visibility =
                             View.GONE
                     }
-                    is ViewState.Error -> {
-                    }
-                    is ViewState.Idle -> {
-                    }
+                    is ViewState.Error -> { }
+                    is ViewState.Idle -> { }
                 }
             }.exaustive
         }

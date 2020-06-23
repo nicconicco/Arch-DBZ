@@ -64,7 +64,6 @@ class MVIActivity : BaseActivity() {
         }
     }
 
-    //todo: Modo de fazer injecão de dependencia na mao.
     private fun setupMVIViewModel() {
         mviViewModel = ViewModelProviders.of(
             this,
