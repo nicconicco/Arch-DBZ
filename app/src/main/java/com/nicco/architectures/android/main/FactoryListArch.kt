@@ -35,7 +35,7 @@ object Factory {
                 imgHeader = GOKU_SS3,
                 img = "",
                 title = "MVP Clean",
-                subtitle = "Aqui voce vera mais\ndetalhes sobre o MVI."
+                subtitle = "Aqui voce vera mais\ndetalhes sobre o MVP Clean."
             )
         )
         add(
@@ -43,7 +43,7 @@ object Factory {
                 imgHeader = GOKU_GOD,
                 img = "",
                 title = "MVVM Clean",
-                subtitle = "Aqui voce vera mais\ndetalhes sobre o MVI."
+                subtitle = "Aqui voce vera mais\ndetalhes sobre o MVVM Clean."
             )
         )
         add(
