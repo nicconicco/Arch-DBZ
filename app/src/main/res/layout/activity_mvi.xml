@@ -45,7 +45,7 @@
         android:adjustViewBounds="true"
         android:gravity="center"
         android:scaleType="fitXY"
-        android:src="@drawable/mvc"
+        android:src="@drawable/mvi"
         android:transitionName="textviewAnimation"
         android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@+id/mvi"
