@@ -1,6 +1,5 @@
 package com.nicco.architectures.android.mvp.providers
 
-import com.nicco.architectures.android.mvp.providers.SchedulerProvider
 import io.reactivex.rxjava3.core.Scheduler
 import io.reactivex.rxjava3.schedulers.TestScheduler
 

@@ -3,7 +3,7 @@ package com.nicco.architectures.android.base
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.OnLifecycleEvent
 
-abstract class BasePresenter<V : Contract.View> : Contract.Presenter<V>, BaseCorotuineScope() {
+abstract class BasePresenter<V : Contract.View> : Contract.Presenter<V>, BaseCoroutineScope() {
     protected var mView: V? = null
 
     override fun attach(view: V) {

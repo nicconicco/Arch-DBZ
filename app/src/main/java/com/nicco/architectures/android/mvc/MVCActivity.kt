@@ -40,7 +40,7 @@ class MVCActivity : BaseActivity() {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onMessageEvent(event: MVCModel) {
+    fun onMessageEvent(event: MVCModel?) {
         event?.apply {
             progress.visibility = GONE
             btnMoreInfos.visibility = VISIBLE

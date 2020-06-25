@@ -3,30 +3,14 @@ package com.nicco.architectures.android.mvvm
 import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.nicco.architectures.android.R
 import com.nicco.architectures.android.base.BaseActivity
-import com.nicco.architectures.android.base.Status
-import com.nicco.architectures.android.network.CoroutineNetworkFake
-import com.nicco.architectures.android.network.NetworkFake
 import kotlinx.android.synthetic.main.activity_mvvm.*
-import kotlinx.coroutines.Dispatchers
 
 class MVVMActivity : BaseActivity() {
 
-    private val viewModel: MVVMViewModel =
-        MVVMViewModel(
-            CoroutineNetworkFake(
-                Dispatchers.IO,
-                Dispatchers.Main,
-                NetworkFake()
-            )
-        )
-
-    private val viewModel2: MVVMViewModelV2 = MVVMViewModelV2(NetworkFake())
-    private val mVVMViewModelV3: MVVMViewModelV3 = MVVMViewModelV3(NetworkFake())
-    private val mVVMViewModelV4 = MVVMViewModelV4(NetworkUseCaseImp())
+    private val mVVMViewModelV4 = MVVMViewModel(NetworkProviderImp())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

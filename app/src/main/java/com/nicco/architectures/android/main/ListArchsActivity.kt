@@ -8,8 +8,11 @@ import androidx.core.app.ActivityOptionsCompat
 import androidx.core.view.ViewCompat
 import com.nicco.architectures.android.R
 import com.nicco.architectures.android.mvc.MVCActivity
+import com.nicco.architectures.android.mvi.ui.view.MVIActivity
 import com.nicco.architectures.android.mvp.MVPActivity
+import com.nicco.architectures.android.mvpclean.ui.MVPCleanActivity
 import com.nicco.architectures.android.mvvm.MVVMActivity
+import com.nicco.architectures.android.mvvmclean.ui.MVVMCleanActivity
 import kotlinx.android.synthetic.main.activity_list_archs.*
 
 const val EXTRA_TRANSITION = "EXTRA_TRANSITION"
@@ -33,6 +36,15 @@ class ListArchsActivity : AppCompatActivity() {
                     }
                     "MVVM" -> {
                         intent = Intent(this@ListArchsActivity, MVVMActivity::class.java)
+                    }
+                    "MVP Clean" -> {
+                        intent = Intent(this@ListArchsActivity, MVPCleanActivity::class.java)
+                    }
+                    "MVVM Clean" -> {
+                        intent = Intent(this@ListArchsActivity, MVVMCleanActivity::class.java)
+                    }
+                    "MVI" -> {
+                        intent = Intent(this@ListArchsActivity, MVIActivity::class.java)
                     }
                     else -> {
 

@@ -3,7 +3,7 @@ package com.nicco.architectures.android.mvp
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import com.nicco.architectures.android.mvp.providers.TestSchedulerProvider
-import com.nicco.architectures.android.network.NetworkFake
+import com.nicco.architectures.android.base.network.NetworkFake
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.schedulers.TestScheduler
 import org.junit.Before
