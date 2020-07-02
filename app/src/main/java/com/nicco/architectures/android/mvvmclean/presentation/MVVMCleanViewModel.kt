@@ -4,11 +4,13 @@ import androidx.hilt.lifecycle.ViewModelInject
 import com.nicco.architectures.android.mvvm.BaseViewModel
 import com.nicco.architectures.android.mvvm.MVVMModel
 import com.nicco.architectures.android.mvvmclean.usecase.MVVMCleanUseCase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 
 inline val <T> T.exaustive get() = this
 
@@ -22,7 +24,7 @@ sealed class ViewState {
 @ExperimentalCoroutinesApi
 class MVVMViewModel @ViewModelInject constructor(
     private val mvvmCleanUseCase: MVVMCleanUseCase
-) : BaseViewModel() {
+) : BaseViewModel(Dispatchers.Main, Dispatchers.IO) {
 
     private val _state by lazy { MutableStateFlow<ViewState>(ViewState.Idle) }
     val state: StateFlow<ViewState> get() = _state

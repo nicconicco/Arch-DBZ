@@ -3,6 +3,7 @@ package com.nicco.architectures.android.mvvm
 import androidx.lifecycle.LiveData
 import com.nicco.architectures.android.base.SingleLiveEvent
 import kotlinx.coroutines.*
+import kotlin.coroutines.CoroutineContext
 
 sealed class ViewState {
     data class loading(val load: Boolean) : ViewState()
@@ -10,7 +11,11 @@ sealed class ViewState {
     data class erro(val erroType: String) : ViewState()
 }
 
-class MVVMViewModel(val networkProvider: NetworkProvider) : BaseViewModel() {
+class MVVMViewModel(
+    val networkProvider: NetworkProvider,
+    val mainThread: CoroutineContext,
+    val inOutThread: CoroutineContext
+) : BaseViewModel(mainThread, inOutThread) {
     private val _viewState by lazy { SingleLiveEvent<ViewState>() }
     val viewState: LiveData<ViewState> get() = _viewState
 
