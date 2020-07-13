@@ -1,5 +1,8 @@
 # Arch-DBZ
-ENG: In this repo, I will show implementations of differents architecture in the Android Nativo World, like MVC, MVP, MVVM, Clean, MVI.
+ENG: In this repo, I will show implementations of differents architecture in the Android Nativo World, like MVC, MVP, MVVM, Clean, MVI. 
+You can find examples of unit test with mokk, implementation with rxAndroid/Java, Coroutines, Channel-flow, using Koin, Hilt, Native DI.
+
+--
 
 BR: Neste repositório você pode encontrar diferentes implementações sobre arquitetura de projetos em aplicações nativas com Kotlin como MVC, MVP, MVVM, Clean, MVI.
 
