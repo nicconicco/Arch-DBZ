@@ -1,4 +1,4 @@
-package com.nicco.architectures.android.update_mvvm
+package com.nicco.architectures.android.update_mvvm.ui
 
 import android.os.Bundle
 import android.view.View
