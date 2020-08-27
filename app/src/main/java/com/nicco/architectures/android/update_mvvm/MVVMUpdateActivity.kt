@@ -3,17 +3,22 @@ package com.nicco.architectures.android.update_mvvm
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.nicco.architectures.android.R
 import com.nicco.architectures.android.base.BaseActivity
+import com.nicco.architectures.android.mvvmclean.presentation.ViewState
 import com.nicco.architectures.android.mvvmclean.presentation.exaustive
 import com.nicco.architectures.android.update_mvvm.di.mvvmUpdateModule
 import com.nicco.architectures.android.update_mvvm.presentation.MvvmUpdateViewModel
 import com.nicco.architectures.android.update_mvvm.presentation.UpdateAction
+import kotlinx.android.synthetic.main.activity_mvvm_clean.*
 import kotlinx.android.synthetic.main.activity_mvvm_update.btnMoreInfos
 import kotlinx.android.synthetic.main.activity_mvvm_update.imgMvp
 import kotlinx.android.synthetic.main.activity_mvvm_update.mvvm
 import kotlinx.android.synthetic.main.activity_mvvm_update.progress
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
@@ -29,33 +34,74 @@ class MVVMUpdateActivity : BaseActivity() {
         loadModules()
         setExtras(this)
 
-        viewModelUpdate.state.observe(this, Observer {
-            when (it) {
-                is UpdateAction.Success -> {
-                    progress.visibility = View.GONE
-                    mvvm.visibility = View.VISIBLE
-                    imgMvp.visibility = View.VISIBLE
-                    btnMoreInfos.visibility = View.VISIBLE
-                    btnMoreInfos.text = "Para mais informacoes entre em:\n\n${it.url}"
-                }
+        /**
+         * With Livedata
+         */
+//        viewModelUpdate.state.observe(this, Observer {
+//            when (it) {
+//                is UpdateAction.Success -> {
+//                    progress.visibility = View.GONE
+//                    mvvm.visibility = View.VISIBLE
+//                    imgMvp.visibility = View.VISIBLE
+//                    btnMoreInfos.visibility = View.VISIBLE
+//                    btnMoreInfos.text = "Para mais informacoes entre em:\n\n${it.url}"
+//                }
+//
+//                is UpdateAction.HideLoading -> {
+//                    progress.visibility = View.GONE
+//                }
+//
+//                is UpdateAction.ShowLoading -> {
+//                    progress.visibility = View.VISIBLE
+//                }
+//
+//                is UpdateAction.Error -> {
+//                }
+//
+//                is UpdateAction.Idle -> {
+//                }
+//            }.exaustive
+//        })
 
-                is UpdateAction.HideLoading -> {
-                    progress.visibility = View.GONE
-                }
+        /**
+         * With Flow
+         */
+        lifecycleScope.launch {
+            viewModelUpdate.stateFlow.collect {
+                when(it) {
+                    is UpdateAction.Success -> {
+                        progress.visibility = View.GONE
+                        mvvm.visibility = View.VISIBLE
+                        imgMvp.visibility = View.VISIBLE
+                        btnMoreInfos.visibility = View.VISIBLE
+                        btnMoreInfos.text = "Para mais informacoes entre em:\n\n${it.url}"
+                    }
 
-                is UpdateAction.ShowLoading -> {
-                    progress.visibility = View.VISIBLE
-                }
+                    is UpdateAction.HideLoading -> {
+                        progress.visibility = View.GONE
+                    }
 
-                is UpdateAction.Error -> {
-                }
+                    is UpdateAction.ShowLoading -> {
+                        progress.visibility = View.VISIBLE
+                    }
 
-                is UpdateAction.Idle -> {
+                    is UpdateAction.Error -> {
+                    }
+
+                    is UpdateAction.Idle -> {
+                    }
                 }
             }.exaustive
-        })
+        }
+        /**
+         * With Livedata
+         */
+//        viewModelUpdate.getMvvmUpdate()
 
-        viewModelUpdate.getMvvmUpdate()
+        /**
+         * With Flow
+         */
+        viewModelUpdate.getMvvmUpdateFlow()
     }
 
     private fun loadModules() {
