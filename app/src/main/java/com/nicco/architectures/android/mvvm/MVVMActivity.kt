@@ -7,10 +7,14 @@ import androidx.lifecycle.Observer
 import com.nicco.architectures.android.R
 import com.nicco.architectures.android.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_mvvm.*
+import kotlinx.coroutines.Dispatchers
 
 class MVVMActivity : BaseActivity() {
 
-    private val mVVMViewModelV4 = MVVMViewModel(NetworkProviderImp())
+    private val mVVMViewModelV4 = MVVMViewModel(
+        NetworkProviderImp(), Dispatchers.Main,
+        Dispatchers.IO
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
