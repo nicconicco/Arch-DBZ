@@ -54,5 +54,14 @@ object Factory {
                 subtitle = "Aqui voce vera mais\ndetalhes sobre o MVI."
             )
         )
+        add(
+            ListArchModelUi(
+                imgHeader = GOKU_TEMPO,
+                img = "",
+                title = "MVVM Melhorado",
+                subtitle = "Aqui voce vera mais\ndetalhes sobre o MVVM melhorado."
+            )
+        )
+
     }
 }

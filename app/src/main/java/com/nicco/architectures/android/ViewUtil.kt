@@ -11,6 +11,7 @@ const val GOKU_SS2 = "GOKU_SS2"
 const val GOKU_SS3 = "GOKU_SS3"
 const val GOKU_GOD = "GOKU_GOD"
 const val GOKU_BLUE = "GOKU_BLUE"
+const val GOKU_TEMPO = "GOKU_TEMPO"
 
 object ViewUtil {
     fun getDrawableByName(context: Context, name: String): Drawable? {
@@ -35,6 +36,9 @@ object ViewUtil {
             }
             GOKU_BLUE -> {
                 ContextCompat.getDrawable(context, R.drawable.ic_goku_blue)
+            }
+            GOKU_TEMPO -> {
+                ContextCompat.getDrawable(context, R.drawable.ic_goku_tempo)
             }
             else -> {
                 ContextCompat.getDrawable(context, R.drawable.ic_goku_vegeta)

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     >
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <ImageView
         android:id="@+id/firstImage"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Teste" />
 
-    <com.google.android.material.textview.MaterialTextView
+    <TextView
         android:id="@+id/mvvm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,11 +28,11 @@
         android:text="MVVM"
         android:textColor="@color/primary_text"
         android:textSize="36sp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@id/firstImage"
         tools:ignore="RtlSymmetry" />
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <ImageView
         android:id="@+id/imgMvp"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -44,11 +44,11 @@
         android:scaleType="fitXY"
         android:src="@drawable/mvvm"
         android:transitionName="textviewAnimation"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@id/mvvm"
         tools:text="Teste" />
 
-    <com.google.android.material.textview.MaterialTextView
+    <TextView
         android:id="@+id/btnMoreInfos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -58,7 +58,7 @@
         android:textSize="18sp"
         android:layout_marginEnd="20dp"
         android:gravity="center|top|left"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgMvp"
         tools:text="Para mais informacoes acesse:" />

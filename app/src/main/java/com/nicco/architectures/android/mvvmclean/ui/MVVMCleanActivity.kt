@@ -23,7 +23,6 @@ class MVVMCleanActivity : BaseActivity() {
         setContentView(R.layout.activity_mvvm_clean)
 
         setExtras(this)
-        mvvmViewModel.findInfosMVVM()
 
         lifecycleScope.launch {
             mvvmViewModel.state.collect {
@@ -43,5 +42,7 @@ class MVVMCleanActivity : BaseActivity() {
                 }
             }.exaustive
         }
+
+        mvvmViewModel.findInfosMVVM()
     }
 }
