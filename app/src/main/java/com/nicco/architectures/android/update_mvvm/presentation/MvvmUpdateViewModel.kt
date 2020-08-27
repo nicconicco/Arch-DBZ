@@ -47,6 +47,7 @@ class MvvmUpdateViewModel(
         ) {
             try {
                 _state.postValue(UpdateAction.ShowLoading)
+
                 fun errorState(error: String) {
                     _state.postValue(UpdateAction.HideLoading)
                     _state.postValue(UpdateAction.Error(error))
