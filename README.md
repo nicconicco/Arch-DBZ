@@ -13,3 +13,7 @@ Como separar as responsabilidades de camadas seguindo cada arquitetura.
 Tem uma apresentação dentro em portugues que você pode pegar a ideia, o app é o goku evoluindo com suas diferentes arquiteturas e ficando cada vez mais forte.
 
 Valeu.
+
+
+
+![](https://imgur.com/BOSjqQv.gif)
