@@ -14,6 +14,4 @@ Tem uma apresentação dentro em portugues que você pode pegar a ideia, o app �
 
 Valeu.
 
-
-
-![](https://imgur.com/BOSjqQv.gif)
+![](https://i.imgur.com/RVM4Ya3.gif)
