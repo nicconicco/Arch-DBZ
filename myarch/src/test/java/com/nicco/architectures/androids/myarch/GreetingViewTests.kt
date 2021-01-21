@@ -57,4 +57,22 @@ class GreetingViewTests {
             view.showError(errorMsg)
         }
     }
+
+    @Test
+    fun `greeting fetch success with an greeting`() {
+        // Setup
+        val successState =
+            GreetingState(fetchStatus = FetchStatus.Success, greeting = "Wooohooo!", error = null)
+        // Act
+        view.render(successState)
+        // Assert
+
+        // with mockito
+//        verify(view).showProgress(false)
+//        verify(view).showError(errorMsg)
+        io.mockk.verify {
+            view.showProgress(false)
+            view.showGreeting("Wooohooo!")
+        }
+    }
 }
