@@ -16,6 +16,9 @@ import com.nicco.architectures.androids.myarch.viewmodel.MyArchViewModel
  * add this for understand better mokk
  * https://jivimberg.io/blog/2019/05/09/mockk-features-rundown/
  *
+ *
+ * https://mockk.io/#spy
+ *
  */
 class MyArchActivity : AppCompatActivity(), GreetingView {
 
