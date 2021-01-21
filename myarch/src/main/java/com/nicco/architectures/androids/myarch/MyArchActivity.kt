@@ -25,6 +25,7 @@ class MyArchActivity : AppCompatActivity(), GreetingView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_arch)
 
+        viewModel.doSomething()
         viewModel.viewState.observe(this, Observer {
             render(state = it)
         })
