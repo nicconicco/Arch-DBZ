@@ -12,6 +12,7 @@ import com.nicco.architectures.android.mvpclean.ui.MVPCleanActivity
 import com.nicco.architectures.android.mvvm.MVVMActivity
 import com.nicco.architectures.android.mvvmclean.ui.MVVMCleanActivity
 import com.nicco.architectures.android.update_mvvm.ui.MVVMUpdateActivity
+import com.nicco.architectures.androids.myarch.MyArchActivity
 import kotlinx.android.synthetic.main.activity_list_archs.*
 
 const val EXTRA_TRANSITION = "EXTRA_TRANSITION"
@@ -47,6 +48,9 @@ class ListArchsActivity : AppCompatActivity() {
                     }
                     "MVVM Melhorado" -> {
                         intent = Intent(this@ListArchsActivity, MVVMUpdateActivity::class.java)
+                    }
+                    "MyArch 2021" -> {
+                        intent = Intent(this@ListArchsActivity, MyArchActivity::class.java)
                     }
                     else -> {
 

@@ -1,2 +1,3 @@
+include ':myarch'
 rootProject.name='ArchitecturesAndroid'
 include ':app'
