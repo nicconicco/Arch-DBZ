@@ -14,6 +14,9 @@ interface GreetingView {
                 showProgress(false)
                 showGreeting(state.greeting)
             }
+            FetchStatus.Idle -> {
+
+            }
         }
     }
 

@@ -3,9 +3,11 @@ package com.nicco.architectures.androids.myarch
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.nicco.architectures.androids.myarch.ui_contract.GreetingView
-import com.nicco.architectures.androids.myarch.viewmodel.MyArchViewModel
+import com.nicco.architectures.androids.myarch.viewmodel.MyArchViewModelImpl
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 /**
  * this content is from
@@ -22,16 +24,18 @@ import com.nicco.architectures.androids.myarch.viewmodel.MyArchViewModel
  */
 class MyArchActivity : AppCompatActivity(), GreetingView {
 
-    private val viewModel: MyArchViewModel by viewModels()
+    private val viewModel: MyArchViewModelImpl by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_arch)
 
+        lifecycleScope.launch {
+            viewModel.viewState.collect {
+                render(it)
+            }
+        }
         viewModel.doSomething()
-        viewModel.viewState.observe(this, Observer {
-            render(state = it)
-        })
     }
 
     override fun showProgress(show: Boolean) {

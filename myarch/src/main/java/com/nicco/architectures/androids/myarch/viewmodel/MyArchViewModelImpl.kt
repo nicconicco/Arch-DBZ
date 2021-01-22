@@ -1,18 +1,22 @@
 package com.nicco.architectures.androids.myarch.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nicco.architectures.androids.myarch.ui_contract.FetchStatus
 import com.nicco.architectures.androids.myarch.ui_contract.GreetingState
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
-abstract class MyViewModel : ViewModel() {
-    abstract val viewState: LiveData<GreetingState>
+abstract class MyArchViewModel : ViewModel() {
+    abstract val viewState: StateFlow<GreetingState>
 }
 
-class MyArchViewModel() : MyViewModel() {
+class MyArchViewModelImpl : MyArchViewModel() {
 
-    override val viewState = MutableLiveData<GreetingState>()
+    override val viewState = MutableStateFlow(GreetingState(
+        FetchStatus.Idle,
+        greeting = null,
+        error = null
+    ))
 
     fun doSomething() {
         //do something

@@ -8,6 +8,7 @@ data class GreetingState(
 
 sealed class FetchStatus {
     object Loading : FetchStatus()
+    object Idle : FetchStatus()
     object Success : FetchStatus()
     object Failure : FetchStatus()
 }
