@@ -1,10 +1,12 @@
 package com.nicco.architectures.androids.myarch.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.nicco.architectures.androids.myarch.ui_contract.FetchStatus
 import com.nicco.architectures.androids.myarch.ui_contract.GreetingState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 abstract class MyArchViewModel : ViewModel() {
     abstract val viewState: StateFlow<GreetingState>
@@ -19,11 +21,12 @@ class MyArchViewModelImpl : MyArchViewModel() {
     ))
 
     fun doSomething() {
-        //do something
-        viewState.value = GreetingState(
-            FetchStatus.Success,
-            greeting = "",
-            error = ""
-        )
+        viewModelScope.launch {
+            viewState.emit(GreetingState(
+                FetchStatus.Success,
+                greeting = "",
+                error = ""
+            ))
+        }
     }
 }
