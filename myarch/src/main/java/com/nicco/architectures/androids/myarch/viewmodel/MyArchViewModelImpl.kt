@@ -13,7 +13,6 @@ abstract class MyArchViewModel : ViewModel() {
 }
 
 class MyArchViewModelImpl : MyArchViewModel() {
-
     override val viewState = MutableStateFlow(GreetingState(
         FetchStatus.Idle,
         greeting = null,
