@@ -3,7 +3,8 @@ package com.nicco.architectures.android.mvp
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import com.nicco.architectures.android.mvp.providers.TestSchedulerProvider
-import com.nicco.architectures.android.base.network.NetworkFake
+import com.arch.core.base.network.NetworkFake
+import com.arch.core.domain.MVPModel
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.schedulers.TestScheduler
 import org.junit.Before
@@ -33,7 +34,8 @@ class LoginPresenterTest {
     @Test
     fun unit_test_success() {
         // Given
-        val mvpModel = MVPModel(url = "https://pt.wikipedia.org/wiki/Model-view-presenter")
+        val mvpModel =
+            MVPModel(url = "https://pt.wikipedia.org/wiki/Model-view-presenter")
 
         val single: Single<MVPModel> = Single.create {
                 emitter ->

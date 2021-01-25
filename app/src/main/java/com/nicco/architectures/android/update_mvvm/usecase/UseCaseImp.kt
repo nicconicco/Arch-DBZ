@@ -1,6 +1,6 @@
 package com.nicco.architectures.android.update_mvvm.usecase
 
-import com.nicco.architectures.android.base.Either
+import com.arch.core.base.Either
 import com.nicco.architectures.android.update_mvvm.data.respository.Repository
 import java.lang.Thread.sleep
 

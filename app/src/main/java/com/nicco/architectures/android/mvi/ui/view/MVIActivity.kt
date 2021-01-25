@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.lifecycleScope
 import com.nicco.architectures.android.R
-import com.nicco.architectures.android.base.BaseActivity
+import com.nicco.architectures.android.main.BaseActivity
 import com.nicco.architectures.android.mvi.data.datasource.MVILocaldatasource
 import com.nicco.architectures.android.mvi.data.datasource.MVIRemoteDatasource
 import com.nicco.architectures.android.mvi.factory.ViewModelFactory

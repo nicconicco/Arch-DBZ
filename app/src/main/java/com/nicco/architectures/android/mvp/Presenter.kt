@@ -1,6 +1,7 @@
 package com.nicco.architectures.android.mvp
 
-import com.nicco.architectures.android.base.Contract
+import com.arch.core.base.Contract
+import com.arch.core.domain.MVPModel
 
 interface Presenter {
 

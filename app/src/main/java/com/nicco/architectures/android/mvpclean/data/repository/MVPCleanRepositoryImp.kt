@@ -1,12 +1,9 @@
 package com.nicco.architectures.android.mvpclean.data.repository
 
 import android.util.Log
-import com.nicco.architectures.android.base.Either
-import com.nicco.architectures.android.mvp.MVPModel
+import com.arch.core.base.Either
+import com.arch.core.domain.MVPModel
 import com.nicco.architectures.android.mvpclean.data.datasource.MVPCleanDatasource
-import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanDatasource
-import com.nicco.architectures.android.mvvmclean.data.repository.MVVMCleanRepository
-import javax.inject.Inject
 
 class MVPCleanRepositoryImp(
     private val mvpCleanLocalDatasource: MVPCleanDatasource,

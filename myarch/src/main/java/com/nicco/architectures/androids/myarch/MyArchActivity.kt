@@ -1,10 +1,16 @@
 package com.nicco.architectures.androids.myarch
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.lifecycle.lifecycleScope
-import com.nicco.architectures.androids.myarch.ui_contract.GreetingView
+import com.arch.core.util.EXTRA_TRANSITION
+import com.arch.core.util.IMG_NAME
+import com.arch.core.util.ViewUtil
+import com.nicco.architectures.androids.myarch.ui_contract.ArchGokuView
 import com.nicco.architectures.androids.myarch.viewmodel.MyArchViewModelImpl
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -22,13 +28,28 @@ import kotlinx.coroutines.launch
  * https://mockk.io/#spy
  *
  */
-class MyArchActivity : AppCompatActivity(), GreetingView {
+class MyArchActivity : AppCompatActivity(), ArchGokuView {
 
     private val viewModel: MyArchViewModelImpl by viewModels()
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_arch)
+
+        val extras = intent.extras
+        extras?.let {
+            val imageTransitionName: String? =
+                extras.getString(EXTRA_TRANSITION)
+
+            findViewById<AppCompatImageView>(R.id.outro).transitionName = imageTransitionName
+
+            val img: String? = extras.getString(IMG_NAME)
+
+            img?.let {
+                findViewById<AppCompatImageView>(R.id.outro).setImageDrawable(ViewUtil.getDrawableByName(this, img))
+            }
+        }
 
         lifecycleScope.launch {
             viewModel.viewState.collect {
@@ -39,11 +60,14 @@ class MyArchActivity : AppCompatActivity(), GreetingView {
     }
 
     override fun showProgress(show: Boolean) {
+        //todo: mostrar progress
     }
 
     override fun showError(error: String?) {
+        //todo: mostrar error
     }
 
-    override fun showGreeting(greeting: String?) {
+    override fun showGoku(greeting: String?) {
+        //todo: mostrar goku OK
     }
 }

@@ -6,10 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import com.nicco.architectures.android.R
-import com.nicco.architectures.android.base.BaseActivity
-import com.nicco.architectures.android.mvp.MVPModel
+import com.arch.core.domain.MVPModel
+import com.nicco.architectures.android.main.BaseActivity
 import com.nicco.architectures.android.mvpclean.presentation.MVPCleanPresenter
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_mvp_clean.*
 import org.koin.android.ext.android.inject
 

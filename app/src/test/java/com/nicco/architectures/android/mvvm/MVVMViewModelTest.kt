@@ -2,21 +2,17 @@ package com.nicco.architectures.android.mvvm
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.nhaarman.mockitokotlin2.mock
-import com.nicco.architectures.android.base.Either
+import com.arch.core.base.Either
+import com.arch.core.domain.MVVMModel
 import io.mockk.coEvery
 import io.mockk.coVerifyOrder
 import io.mockk.mockk
-import io.mockk.verifyOrder
 import kotlinx.coroutines.*
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.core.IsInstanceOf
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.Mock
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
 
 @ExperimentalCoroutinesApi

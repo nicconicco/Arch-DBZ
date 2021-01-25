@@ -1,7 +1,6 @@
 package com.nicco.architectures.android.main
 
-import com.nicco.architectures.android.*
-import com.nicco.architectures.android.mvc.MVCModel
+import com.arch.core.util.*
 
 object Factory {
 
@@ -62,6 +61,13 @@ object Factory {
                 subtitle = "Aqui voce vera mais\ndetalhes sobre o MVVM melhorado."
             )
         )
-
+        add(
+            ListArchModelUi(
+                imgHeader = GOKU_SS4,
+                img = "",
+                title = "TDD States MVVM",
+                subtitle = "Aqui voce vera mais\ndetalhes sobre o MVVM melhorado."
+            )
+        )
     }
 }

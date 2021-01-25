@@ -5,7 +5,7 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.lifecycle.Observer
 import com.nicco.architectures.android.R
-import com.nicco.architectures.android.base.BaseActivity
+import com.nicco.architectures.android.main.BaseActivity
 import kotlinx.android.synthetic.main.activity_mvvm.*
 import kotlinx.coroutines.Dispatchers
 

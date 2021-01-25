@@ -6,7 +6,8 @@ import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import com.nicco.architectures.android.R
-import com.nicco.architectures.android.base.BaseActivity
+import com.arch.core.domain.MVCModel
+import com.nicco.architectures.android.main.BaseActivity
 import kotlinx.android.synthetic.main.activity_mvc.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe

@@ -6,9 +6,10 @@ import android.os.Bundle
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import com.nicco.architectures.android.R
-import com.nicco.architectures.android.base.BaseActivity
 import com.nicco.architectures.android.mvp.providers.AppSchedulerProvider
-import com.nicco.architectures.android.base.network.NetworkFake
+import com.arch.core.base.network.NetworkFake
+import com.arch.core.domain.MVPModel
+import com.nicco.architectures.android.main.BaseActivity
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_mvp.*

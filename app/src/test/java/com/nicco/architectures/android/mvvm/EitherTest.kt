@@ -1,7 +1,7 @@
 package com.nicco.architectures.android.mvvm
 
-import com.nicco.architectures.android.base.Either
-import com.nicco.architectures.android.base.getOrElse
+import com.arch.core.base.Either
+import com.arch.core.base.getOrElse
 import org.amshove.kluent.shouldBe
 import org.amshove.kluent.shouldBeInstanceOf
 import org.amshove.kluent.shouldEqualTo

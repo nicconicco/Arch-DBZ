@@ -1,7 +1,8 @@
 package com.nicco.architectures.android.mvvm
 
 import androidx.lifecycle.LiveData
-import com.nicco.architectures.android.base.SingleLiveEvent
+import com.arch.core.base.SingleLiveEvent
+import com.arch.core.domain.MVVMModel
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 

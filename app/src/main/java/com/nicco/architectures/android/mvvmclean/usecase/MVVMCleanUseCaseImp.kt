@@ -1,7 +1,7 @@
 package com.nicco.architectures.android.mvvmclean.usecase
 
-import com.nicco.architectures.android.base.Either
-import com.nicco.architectures.android.mvvm.MVVMModel
+import com.arch.core.base.Either
+import com.arch.core.domain.MVVMModel
 import com.nicco.architectures.android.mvvmclean.data.repository.MVVMCleanRepository
 import javax.inject.Inject
 

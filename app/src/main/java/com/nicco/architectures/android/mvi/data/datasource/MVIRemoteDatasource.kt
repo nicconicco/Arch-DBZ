@@ -1,6 +1,6 @@
 package com.nicco.architectures.android.mvi.data.datasource
 
-import com.nicco.architectures.android.mvi.data.MVIModel
+import com.arch.core.domain.MVIModel
 
 class MVIRemoteDatasource: MVIDatasource {
     override fun getData(): MVIModel {

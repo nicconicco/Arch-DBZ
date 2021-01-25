@@ -1,8 +1,9 @@
 package com.nicco.architectures.android.mvp
 
-import com.nicco.architectures.android.base.BasePresenter
+import com.arch.core.base.BasePresenter
 import com.nicco.architectures.android.mvp.providers.SchedulerProvider
-import com.nicco.architectures.android.base.network.NetworkFake
+import com.arch.core.base.network.NetworkFake
+import com.arch.core.domain.MVPModel
 
 class PresenterImp(
     private val networkFake: NetworkFake,

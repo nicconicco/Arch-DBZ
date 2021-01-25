@@ -1,7 +1,7 @@
 package com.nicco.architectures.android.mvvmclean.di
 
-import com.nicco.architectures.android.base.database.DatabaseFake
-import com.nicco.architectures.android.base.network.NetworkFake
+import com.arch.core.base.database.DatabaseFake
+import com.arch.core.base.network.NetworkFake
 import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanDatasource
 import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanLocalDatasource
 import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanRemoteDatasource

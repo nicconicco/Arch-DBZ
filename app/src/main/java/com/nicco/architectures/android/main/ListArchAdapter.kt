@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.nicco.architectures.android.R
-import com.nicco.architectures.android.ViewUtil.getDrawableByName
+import com.arch.core.util.ViewUtil.getDrawableByName
 import kotlinx.android.synthetic.main.item_list.view.*
 
 object DiffUtilArch : DiffUtil.ItemCallback<ListArchModelUi>() {

@@ -1,7 +1,7 @@
 package com.nicco.architectures.android.mvpclean.presentation
 
-import com.nicco.architectures.android.base.BasePresenter
-import com.nicco.architectures.android.mvp.MVPModel
+import com.arch.core.base.BasePresenter
+import com.arch.core.domain.MVPModel
 import com.nicco.architectures.android.mvpclean.usecase.MVPCleanUseCase
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -10,6 +10,9 @@ class MVPCleanPresenterImp (
     private val mvpCleanUseCaseImp: MVPCleanUseCase
 ) : BasePresenter<MVPCleanPresenter.View>(), MVPCleanPresenter.Action {
     override fun loadMvpInfos() {
+//        viewModelScope.launch {
+//
+//        }
         uiScope.launch {
             getInfos()
         }

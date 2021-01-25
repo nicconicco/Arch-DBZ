@@ -1,6 +1,6 @@
 package com.nicco.architectures.android.update_mvvm.data.respository
 
-import com.nicco.architectures.android.base.Either
+import com.arch.core.base.Either
 import com.nicco.architectures.android.update_mvvm.data.datasource.Datasource
 
 class RepositoryImp(

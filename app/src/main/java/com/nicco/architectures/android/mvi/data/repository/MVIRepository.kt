@@ -1,6 +1,6 @@
 package com.nicco.architectures.android.mvi.data.repository
 
-import com.nicco.architectures.android.mvi.data.MVIModel
+import com.arch.core.domain.MVIModel
 
 interface MVIRepository {
     fun loadMVIModel() : MVIModel

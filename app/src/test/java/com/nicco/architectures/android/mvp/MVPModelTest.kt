@@ -1,5 +1,6 @@
 package com.nicco.architectures.android.mvp
 
+import com.arch.core.domain.MVPModel
 import org.junit.Test
 
 class MVPModelTest {

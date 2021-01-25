@@ -1,6 +1,6 @@
 package com.nicco.architectures.android.mvpclean.data.datasource
 
-import com.nicco.architectures.android.mvp.MVPModel
+import com.arch.core.domain.MVPModel
 
 interface MVPCleanDatasource {
     fun getData() : MVPModel

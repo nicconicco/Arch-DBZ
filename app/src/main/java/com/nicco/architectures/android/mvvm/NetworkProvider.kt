@@ -1,6 +1,7 @@
 package com.nicco.architectures.android.mvvm
 
-import com.nicco.architectures.android.base.Either
+import com.arch.core.base.Either
+import com.arch.core.domain.MVVMModel
 
 interface NetworkProvider {
     suspend fun findInfos() : Either<String, MVVMModel>

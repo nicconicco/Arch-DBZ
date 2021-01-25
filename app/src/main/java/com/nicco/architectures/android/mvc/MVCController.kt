@@ -1,6 +1,6 @@
 package com.nicco.architectures.android.mvc
 
-import com.nicco.architectures.android.base.network.NetworkFake
+import com.arch.core.base.network.NetworkFake
 
 class MVCController {
 

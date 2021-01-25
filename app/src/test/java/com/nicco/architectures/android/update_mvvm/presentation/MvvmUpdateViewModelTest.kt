@@ -2,7 +2,7 @@ package com.nicco.architectures.android.update_mvvm.presentation
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.nicco.architectures.android.base.Either
+import com.arch.core.base.Either
 import com.nicco.architectures.android.update_mvvm.usecase.UseCase
 import io.mockk.coEvery
 import io.mockk.coVerify

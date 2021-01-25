@@ -2,16 +2,13 @@ package com.nicco.architectures.android.update_mvvm.ui
 
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.nicco.architectures.android.R
-import com.nicco.architectures.android.base.BaseActivity
-import com.nicco.architectures.android.mvvmclean.presentation.ViewState
+import com.nicco.architectures.android.main.BaseActivity
 import com.nicco.architectures.android.mvvmclean.presentation.exaustive
 import com.nicco.architectures.android.update_mvvm.di.mvvmUpdateModule
 import com.nicco.architectures.android.update_mvvm.presentation.MvvmUpdateViewModel
 import com.nicco.architectures.android.update_mvvm.presentation.UpdateAction
-import kotlinx.android.synthetic.main.activity_mvvm_clean.*
 import kotlinx.android.synthetic.main.activity_mvvm_update.btnMoreInfos
 import kotlinx.android.synthetic.main.activity_mvvm_update.imgMvp
 import kotlinx.android.synthetic.main.activity_mvvm_update.mvvm

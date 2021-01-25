@@ -1,7 +1,7 @@
 package com.nicco.architectures.android.mvpclean.presentation
 
-import com.nicco.architectures.android.base.Contract
-import com.nicco.architectures.android.mvp.MVPModel
+import com.arch.core.base.Contract
+import com.arch.core.domain.MVPModel
 
 interface MVPCleanPresenter {
 

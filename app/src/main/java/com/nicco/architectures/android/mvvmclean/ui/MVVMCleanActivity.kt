@@ -5,7 +5,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.nicco.architectures.android.R
-import com.nicco.architectures.android.base.BaseActivity
+import com.nicco.architectures.android.main.BaseActivity
 import com.nicco.architectures.android.mvvmclean.presentation.MVVMViewModel
 import com.nicco.architectures.android.mvvmclean.presentation.ViewState
 import com.nicco.architectures.android.mvvmclean.presentation.exaustive

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.arch.core.util.IMG_NAME
 import com.nicco.architectures.android.R
 import com.nicco.architectures.android.mvc.MVCActivity
 import com.nicco.architectures.android.mvi.ui.view.MVIActivity
@@ -14,9 +15,6 @@ import com.nicco.architectures.android.mvvmclean.ui.MVVMCleanActivity
 import com.nicco.architectures.android.update_mvvm.ui.MVVMUpdateActivity
 import com.nicco.architectures.androids.myarch.MyArchActivity
 import kotlinx.android.synthetic.main.activity_list_archs.*
-
-const val EXTRA_TRANSITION = "EXTRA_TRANSITION"
-const val IMG_NAME = "IMG_NAME"
 
 class ListArchsActivity : AppCompatActivity() {
 
@@ -49,7 +47,7 @@ class ListArchsActivity : AppCompatActivity() {
                     "MVVM Melhorado" -> {
                         intent = Intent(this@ListArchsActivity, MVVMUpdateActivity::class.java)
                     }
-                    "MyArch 2021" -> {
+                    "TDD - States - MVVM" -> {
                         intent = Intent(this@ListArchsActivity, MyArchActivity::class.java)
                     }
                     else -> {

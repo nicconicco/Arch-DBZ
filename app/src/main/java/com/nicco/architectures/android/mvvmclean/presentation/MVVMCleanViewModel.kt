@@ -2,7 +2,7 @@ package com.nicco.architectures.android.mvvmclean.presentation
 
 import androidx.hilt.lifecycle.ViewModelInject
 import com.nicco.architectures.android.mvvm.BaseViewModel
-import com.nicco.architectures.android.mvvm.MVVMModel
+import com.arch.core.domain.MVVMModel
 import com.nicco.architectures.android.mvvmclean.usecase.MVVMCleanUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -10,7 +10,6 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import kotlin.coroutines.CoroutineContext
 
 inline val <T> T.exaustive get() = this
 

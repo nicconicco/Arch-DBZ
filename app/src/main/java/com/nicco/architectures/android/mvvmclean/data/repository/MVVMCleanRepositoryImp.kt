@@ -1,7 +1,7 @@
 package com.nicco.architectures.android.mvvmclean.data.repository
 
-import com.nicco.architectures.android.base.Either
-import com.nicco.architectures.android.mvvm.MVVMModel
+import com.arch.core.base.Either
+import com.arch.core.domain.MVVMModel
 import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanDatasource
 import javax.inject.Inject
 

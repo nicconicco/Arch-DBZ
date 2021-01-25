@@ -4,6 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyArchActivity">
+    >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/outro"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        android:background="@color/secondary_text"
+        android:gravity="center"
+        android:scaleType="fitXY"
+        android:transitionName="textviewAnimation"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Teste" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mvi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|left"
+        android:paddingStart="30dp"
+        android:paddingTop="30dp"
+        android:text="MVI"
+        android:textColor="@color/primary_text"
+        android:textSize="36sp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/outro"
+        tools:ignore="RtlSymmetry"
+        android:paddingLeft="30dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgMVI"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/primary_text"
+        android:textSize="18sp"
+        android:adjustViewBounds="true"
+        android:gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/mvi"
+        android:transitionName="textviewAnimation"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/mvi"
+        tools:text="Teste" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/btnMoreInfos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center|top|left"
+        android:visibility="invisible"
+        android:textColor="@color/primary_text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgMVI"
+        tools:text="Para mais informacoes acesse:" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="@id/btnMoreInfos"
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@ import androidx.annotation.UiThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nicco.architectures.android.base.SingleLiveEvent
+import com.arch.core.base.SingleLiveEvent
 import com.nicco.architectures.android.mvvmclean.presentation.ViewState
 import com.nicco.architectures.android.update_mvvm.usecase.UseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi

@@ -1,9 +1,7 @@
 package com.nicco.architectures.android.mvpclean.data.datasource
 
-import com.nicco.architectures.android.base.database.DatabaseFake
-import com.nicco.architectures.android.mvp.MVPModel
-import com.nicco.architectures.android.mvvmclean.data.datasource.MVVMCleanDatasource
-import javax.inject.Inject
+import com.arch.core.base.database.DatabaseFake
+import com.arch.core.domain.MVPModel
 
 class MVPCleanLocalDatasource (
     val databaseFake: DatabaseFake

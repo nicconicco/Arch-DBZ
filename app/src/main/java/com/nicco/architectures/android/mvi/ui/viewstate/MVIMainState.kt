@@ -1,6 +1,6 @@
 package com.nicco.architectures.android.mvi.ui.viewstate
 
-import com.nicco.architectures.android.mvi.data.MVIModel
+import com.arch.core.domain.MVIModel
 
 sealed class MVIMainState {
     object Idle : MVIMainState()
