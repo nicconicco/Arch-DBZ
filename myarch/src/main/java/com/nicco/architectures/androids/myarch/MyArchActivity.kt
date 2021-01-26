@@ -28,6 +28,8 @@ import kotlinx.coroutines.launch
  * https://mockk.io/#spy
  *
  */
+typealias Layout = R.layout
+
 class MyArchActivity : AppCompatActivity(), ArchGokuView {
 
     private val viewModel: MyArchViewModelImpl by viewModels()
@@ -35,7 +37,7 @@ class MyArchActivity : AppCompatActivity(), ArchGokuView {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_arch)
+        setContentView(Layout.activity_my_arch)
 
         val extras = intent.extras
         extras?.let {
