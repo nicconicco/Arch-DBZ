@@ -17,7 +17,6 @@ const val GOKU_SS4 = "GOKU_SS4"
 const val EXTRA_TRANSITION = "EXTRA_TRANSITION"
 const val IMG_NAME = "IMG_NAME"
 
-
 object ViewUtil {
     fun getDrawableByName(context: Context, name: String): Drawable? = when (name) {
         GOKU_CRIANCA -> {
