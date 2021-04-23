@@ -4,6 +4,11 @@ You can find examples of unit test with mokk, implementation with rxAndroid/Java
 
 --
 
+Link sobre talk desses conteudos:
+
+https://www.youtube.com/watch?v=0Bb6ajkB96Q&t=14s
+
+
 BR: Neste repositório você pode encontrar diferentes implementações sobre arquitetura de projetos em aplicações nativas com Kotlin como MVC, MVP, MVVM, Clean, MVI.
 
 Também mostro como fazer unit tests com mokk, como usar rxAndroid/Java, como usar coroutines, como usar channel flow, como usar Koin, Hilt, fazer em modo nativo a DI.
